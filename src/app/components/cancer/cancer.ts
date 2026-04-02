@@ -15,20 +15,20 @@ export class Cancer {
   result: string = '';
 
   formData = {
-    smoking: 1,
-    yellow_fingers: 1,
-    anxiety: 1,
-    peer_pressure: 1,
-    chronic_disease: 1,
-    fatigue: 1,
-    allergy: 1,
-    wheezing: 1,
-    alcohol_consuming: 1,
-    coughing: 1,
-    shortness_of_breath: 1,
-    swallowing_difficulty: 1,
-    chest_pain: 1
-  };
+  smoking: null,
+  yellow_fingers: null,
+  anxiety: null,
+  peer_pressure: null,
+  chronic_disease: null,
+  fatigue: null,
+  allergy: null,
+  wheezing: null,
+  alcohol_consuming: null,
+  coughing: null,
+  shortness_of_breath: null,
+  swallowing_difficulty: null,
+  chest_pain: null
+};
 
   constructor(private service: CancerService) {}
 
