@@ -8,5 +8,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('detect-lungcancer');
+  protected readonly title = signal('Detectation Lung Cancer');
 }
