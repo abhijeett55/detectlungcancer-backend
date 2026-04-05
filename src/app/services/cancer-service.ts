@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CancerService {
 
-  private apiUrl = 'http://127.0.0.1:5000/predict';
+  private apiUrl = 'https://lung-cancer-detection-ya92.onrender.com';
 
   constructor(private http: HttpClient) {}
 
