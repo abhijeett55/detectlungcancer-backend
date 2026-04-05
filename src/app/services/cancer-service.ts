@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CancerService {
 
-  private apiUrl = 'http://localhost:8001/predict'; 
+  private apiUrl = 'http://localhost:5000/predict'; 
 
   constructor(private http: HttpClient) {}
 
