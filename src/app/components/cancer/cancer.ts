@@ -13,51 +13,59 @@ import { CancerService } from '../../services/cancer-service';
 export class Cancer {
 
   result: string = '';
+  probability: number | null = null;
+  loading: boolean = false;
 
-  formData = {
-  smoking: null,
-  yellow_fingers: null,
-  anxiety: null,
-  peer_pressure: null,
-  chronic_disease: null,
-  fatigue: null,
-  allergy: null,
-  wheezing: null,
-  alcohol_consuming: null,
-  coughing: null,
-  shortness_of_breath: null,
-  swallowing_difficulty: null,
-  chest_pain: null
-};
+  formData: any = {
+    smoking: '',
+    yellow_fingers: '',
+    anxiety: '',
+    peer_pressure: '',
+    chronic_disease: '',
+    fatigue: '',
+    allergy: '',
+    wheezing: '',
+    alcohol_consuming: '',
+    coughing: '',
+    shortness_of_breath: '',
+    swallowing_difficulty: '',
+    chest_pain: ''
+  };
 
   constructor(private service: CancerService) {}
 
-    onSubmit() {
+  onSubmit() {
 
-    const payload = {
-      smoking: Number(this.formData.smoking),
-      yellow_fingers: Number(this.formData.yellow_fingers),
-      anxiety: Number(this.formData.anxiety),
-      peer_pressure: Number(this.formData.peer_pressure),
-      chronic_disease: Number(this.formData.chronic_disease),
-      fatigue: Number(this.formData.fatigue),
-      allergy: Number(this.formData.allergy),
-      wheezing: Number(this.formData.wheezing),
-      alcohol_consuming: Number(this.formData.alcohol_consuming),
-      coughing: Number(this.formData.coughing),
-      shortness_of_breath: Number(this.formData.shortness_of_breath),
-      swallowing_difficulty: Number(this.formData.swallowing_difficulty),
-      chest_pain: Number(this.formData.chest_pain)
-    };
+    // 🚨 Validation (prevent empty/null issues)
+    for (let key in this.formData) {
+      if (this.formData[key] === '' || this.formData[key] === null) {
+        this.result = '⚠️ Please fill all fields';
+        return;
+      }
+    }
+
+    const payload = Object.fromEntries(
+      Object.entries(this.formData).map(([key, value]) => [key, Number(value)])
+    );
+
+    console.log("📤 Payload:", payload);
+
+    this.loading = true;
+    this.result = '';
+    this.probability = null;
 
     this.service.predict(payload).subscribe({
       next: (res: any) => {
-        console.log("Response:", res);
+        console.log("✅ Response:", res);
+
         this.result = res.result;
+        this.probability = res.probability ?? null;
+        this.loading = false;
       },
       error: (err) => {
-        console.error("Error:", err);
+        console.error("❌ Error:", err);
         this.result = 'Error connecting to server';
+        this.loading = false;
       }
     });
   }
