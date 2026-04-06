@@ -56,10 +56,12 @@ export class Cancer {
 
     this.service.predict(payload).subscribe({
       next: (res: any) => {
-        console.log("✅ Response:", res);
+      console.log("✅ Response:", res);
 
         this.result = res.result;
+        this.prediction = res.prediction;   // ✅ ADD THIS
         this.probability = res.probability ?? null;
+
         this.loading = false;
       },
       error: (err) => {

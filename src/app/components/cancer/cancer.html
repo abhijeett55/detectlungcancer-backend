@@ -92,8 +92,25 @@
     <option [value]="2">Yes</option>
   </select>
 
-  <button type="submit">Predict</button>
+<button type="submit" [disabled]="loading">
+    {{ loading ? 'Predicting...' : 'Predict' }}
+  </button>
 
 </form>
 
-<h2 *ngIf="result">{{ result }}</h2>
+<!-- RESULT SECTION -->
+<div *ngIf="result" style="margin-top:20px;">
+
+  <h2>{{ result }}</h2>
+
+  <!-- Show raw prediction -->
+  <p *ngIf="prediction !== undefined">
+    Prediction Value: {{ prediction }}
+  </p>
+
+  <!-- Show probability if available -->
+  <p *ngIf="probability !== null">
+    Probability: {{ probability | percent:'1.0-2' }}
+  </p>
+
+</div>
