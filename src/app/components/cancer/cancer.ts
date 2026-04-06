@@ -32,13 +32,31 @@ export class Cancer {
 
   constructor(private service: CancerService) {}
 
-  onSubmit() {
-    this.service.predict(this.formData).subscribe({
+    onSubmit() {
+
+    const payload = {
+      smoking: Number(this.formData.smoking),
+      yellow_fingers: Number(this.formData.yellow_fingers),
+      anxiety: Number(this.formData.anxiety),
+      peer_pressure: Number(this.formData.peer_pressure),
+      chronic_disease: Number(this.formData.chronic_disease),
+      fatigue: Number(this.formData.fatigue),
+      allergy: Number(this.formData.allergy),
+      wheezing: Number(this.formData.wheezing),
+      alcohol_consuming: Number(this.formData.alcohol_consuming),
+      coughing: Number(this.formData.coughing),
+      shortness_of_breath: Number(this.formData.shortness_of_breath),
+      swallowing_difficulty: Number(this.formData.swallowing_difficulty),
+      chest_pain: Number(this.formData.chest_pain)
+    };
+
+    this.service.predict(payload).subscribe({
       next: (res: any) => {
+        console.log("Response:", res);
         this.result = res.result;
       },
       error: (err) => {
-        console.error(err);
+        console.error("Error:", err);
         this.result = 'Error connecting to server';
       }
     });
