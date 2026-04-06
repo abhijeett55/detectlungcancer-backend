@@ -13,6 +13,7 @@ import { CancerService } from '../../services/cancer-service';
 export class Cancer {
 
   result: string = '';
+  prediction: number | null = null;
   probability: number | null = null;
   loading: boolean = false;
 
