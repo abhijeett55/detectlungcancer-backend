@@ -4,64 +4,64 @@
   <!-- Smoking -->
   <label>Smoking</label>
   <select [(ngModel)]="formData.smoking" name="smoking">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Yellow Fingers -->
   <label>Yellow Fingers</label>
   <select [(ngModel)]="formData.yellow_fingers" name="yellow_fingers">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Anxiety -->
   <label>Anxiety</label>
   <select [(ngModel)]="formData.anxiety" name="anxiety">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Peer Pressure -->
   <label>Peer Pressure</label>
   <select [(ngModel)]="formData.peer_pressure" name="peer_pressure">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Chronic Disease -->
   <label>Chronic Disease</label>
   <select [(ngModel)]="formData.chronic_disease" name="chronic_disease">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Fatigue -->
   <label>Fatigue</label>
   <select [(ngModel)]="formData.fatigue" name="fatigue">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Allergy -->
   <label>Allergy</label>
   <select [(ngModel)]="formData.allergy" name="allergy">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Wheezing -->
   <label>Wheezing</label>
   <select [(ngModel)]="formData.wheezing" name="wheezing">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Alcohol Consuming -->
   <label>Alcohol Consuming</label>
   <select [(ngModel)]="formData.alcohol_consuming" name="alcohol_consuming">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Coughing -->
@@ -74,22 +74,22 @@
   <!-- Shortness of Breath -->
   <label>Shortness of Breath</label>
   <select [(ngModel)]="formData.shortness_of_breath" name="shortness_of_breath">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Swallowing Difficulty -->
   <label>Swallowing Difficulty</label>
   <select [(ngModel)]="formData.swallowing_difficulty" name="swallowing_difficulty">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
   <!-- Chest Pain -->
   <label>Chest Pain</label>
   <select [(ngModel)]="formData.chest_pain" name="chest_pain">
-    <option [value]="1">No</option>
-    <option [value]="2">Yes</option>
+    <option [value]="0">No</option>
+    <option [value]="1">Yes</option>
   </select>
 
 <button type="submit" [disabled]="loading">
@@ -110,7 +110,7 @@
 
   <!-- Show probability if available -->
   <p *ngIf="probability !== null">
-    Probability: {{ probability | percent:'1.0-2' }}
+    Probability: {{ probability | percent:'0.0-1.0' }}
   </p>
 
 </div>
