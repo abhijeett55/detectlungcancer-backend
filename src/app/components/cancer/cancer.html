@@ -1,98 +1,111 @@
 <form (ngSubmit)="onSubmit()">
 
-
   <!-- Smoking -->
   <label>Smoking</label>
-  <select [(ngModel)]="formData.smoking" name="smoking">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.smoking" name="smoking" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Yellow Fingers -->
   <label>Yellow Fingers</label>
-  <select [(ngModel)]="formData.yellow_fingers" name="yellow_fingers">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.yellow_fingers" name="yellow_fingers" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Anxiety -->
   <label>Anxiety</label>
-  <select [(ngModel)]="formData.anxiety" name="anxiety">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.anxiety" name="anxiety" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Peer Pressure -->
   <label>Peer Pressure</label>
-  <select [(ngModel)]="formData.peer_pressure" name="peer_pressure">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.peer_pressure" name="peer_pressure" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Chronic Disease -->
   <label>Chronic Disease</label>
-  <select [(ngModel)]="formData.chronic_disease" name="chronic_disease">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.chronic_disease" name="chronic_disease" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Fatigue -->
   <label>Fatigue</label>
-  <select [(ngModel)]="formData.fatigue" name="fatigue">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.fatigue" name="fatigue" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Allergy -->
   <label>Allergy</label>
-  <select [(ngModel)]="formData.allergy" name="allergy">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.allergy" name="allergy" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Wheezing -->
   <label>Wheezing</label>
-  <select [(ngModel)]="formData.wheezing" name="wheezing">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.wheezing" name="wheezing" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Alcohol Consuming -->
   <label>Alcohol Consuming</label>
-  <select [(ngModel)]="formData.alcohol_consuming" name="alcohol_consuming">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.alcohol_consuming" name="alcohol_consuming" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Coughing -->
   <label>Coughing</label>
-  <select [(ngModel)]="formData.coughing" name="coughing">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.coughing" name="coughing" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Shortness of Breath -->
   <label>Shortness of Breath</label>
-  <select [(ngModel)]="formData.shortness_of_breath" name="shortness_of_breath">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.shortness_of_breath" name="shortness_of_breath" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Swallowing Difficulty -->
   <label>Swallowing Difficulty</label>
-  <select [(ngModel)]="formData.swallowing_difficulty" name="swallowing_difficulty">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.swallowing_difficulty" name="swallowing_difficulty" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
   <!-- Chest Pain -->
   <label>Chest Pain</label>
-  <select [(ngModel)]="formData.chest_pain" name="chest_pain">
-    <option [value]="0">No</option>
-    <option [value]="1">Yes</option>
+  <select [(ngModel)]="formData.chest_pain" name="chest_pain" required>
+    <option [ngValue]="null" disabled>Select</option>
+    <option [ngValue]="0">No</option>
+    <option [ngValue]="1">Yes</option>
   </select>
 
-<button type="submit" [disabled]="loading">
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="loading">
     {{ loading ? 'Predicting...' : 'Predict' }}
   </button>
 
@@ -103,12 +116,12 @@
 
   <h2>{{ result }}</h2>
 
-  <!-- Show raw prediction -->
-  <p *ngIf="prediction !== undefined">
+  <!-- Prediction Value -->
+  <p *ngIf="prediction !== null">
     Prediction Value: {{ prediction }}
   </p>
 
-  <!-- Show probability if available -->
+  <!-- Probability -->
   <p *ngIf="probability !== null">
     Probability: {{ probability | percent:'0.0-1.0' }}
   </p>
